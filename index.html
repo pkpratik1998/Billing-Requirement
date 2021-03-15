@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>भावना ड्रायक्लिनर्स</title>
+    <link rel="stylesheet" type="text/css" href="style.css">   
+</head>
+    <body>
+    <div class="login-box">
+    <img src="avatar.png" class="avatar">
+        <h1>ऍडमीन</h1>
+            <form name="loginform" onSubmit="return validateForm()" action="invoice.html" method="POST">
+            
+            <p>पासवर्ड</p>
+            <input type="password" name="password" placeholder="पासवर्ड" required>
+            <input type="submit" name="submit" value="लॉगीन">
+               
+            </form>
+        
+        
+        </div>
+    
+        <script>
+            function validateForm() {
+              
+                var pw = document.loginform.password.value;
+                
+                var pword = "12345";
+                if (pw == pword) {
+                   return true;
+                    
+                }
+                else {
+                    alert ("Login was unsuccessful, please check your password");
+                    return false;
+                }
+              }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>भावना ड्रायक्लिनर्स</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .delete-btn {
+            position: relative;
+        }
+
+        .delete {
+            display: block;
+            color: rgb(230, 26, 26);
+            text-decoration: none;
+            position: absolute;
+            background: #EEEEEE;
+            font-weight: bold;
+            padding: 0px 3px;
+            border: 1px solid;
+            top: -6px;
+            left: -6px;
+            font-family: Verdana;
+            font-size: 12px;
+        }
+        .printBtn{
+            margin-left: 200px;
+            margin-top: 50px;
+        }
+
+        @media print {
+            .noPrint{
+                display:none;
+            }
+
+            body{
+                border: 10pt double #dc0f0f;
+            }
+           
+        }
+        @media screen {
+            .printable{
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container" id="mydiv" style="margin-top:50px; background-color: rgb(211, 210, 210);">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div>
+                    <h1 class="text-center" style="color: #e41515;">भावना ड्रायक्लिनर्स</h1>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                      
+                        <label for="name" style="color: rgb(240, 14, 14); margin-right: 20px;">नाव: </label>
+                        <input  type="text" placeholder="" style="width: 430px;  padding: 5px 20px;  margin: 10px 0;">
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                       
+                        <b><p id="demo" style="color: #dc0f0f;"></p></b>
+
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered" >
+                        <thead>
+                            <tr class="item-row" style="color: #dc0f0f;">
+                                     
+                                <th style="text-align: center;">तपशिल</th>
+                                <th style="text-align: center;">नग</th>
+                                <th style="text-align: center;">दर</th>
+                                <th style="text-align: center;">रुपये</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        
+                        <tr class="item-row">
+                            <td><input class="form-control item" placeholder="तपशिल" type="text" list="mySuggestion">
+                                <datalist id="mySuggestion">
+                                    <option>शर्ट</option>
+                                    <option>पॅन्ट</option>
+                                    <option>६वार साडी </option>
+                                    <option>९वार साडी </option>
+                                    <option>धोतर </option>
+                                    <option>लेडीज ड्रेस</option>
+                                    <option>शेरवानी </option>
+                                    <option>साडी</option>
+                                    <option>ब्लाऊज </option>
+                                    <option>कोट </option>
+                                    <option>जॅकेट</option>
+                                    <option>जर्किंग</option>
+                                    <option>सलवार </option>
+                                    <option>लेडीज कुर्ता </option>
+                                    <option>ओढणी </option>
+                                    <option>घागरा </option>
+                                    <option>ब्लॅंकेट </option>
+                                    <option>बेडशिट </option>
+                                    <option>मंडप कापड प्र. कि. </option>
+                                </datalist>
+                            
+                            </td>
+                            <td><input class="form-control price" placeholder="नग" type="text"></td>
+                            <td><input class="form-control qty" placeholder="दर" type="text"></td>
+                            <td><span class="total" style="color: #070707;">0.00</span></td>
+                        </tr>
+                        <tr id="hiderow">
+                            <td colspan="4">
+                                <a id="addRow" href="javascript:;" title="Add a row" class="btn btn-primary noPrint">Add a row</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-right"><strong style="color: #e60f0f;">एकुण</strong></td>
+                            <td><span id="subtotal" style="color: #070707;">0.00</span></td>
+                        </tr>
+                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="printable">
+           <ul style="list-style-type: '✳️'; color: #000;">
+               <li> कपड्याच्या रंगाची एम्ब्रॉयडरी, प्रिंट व बटणाची जबाबदारी नाही.</li>
+               <li> कपडे हरवल्यास व जळाल्यास त्या कपड्याऐवजी 1/4 रक्कम 1 महिन्यानंतर मिळेल.</li>
+               <li> 1 महिन्याच्या आत कपडे न नेल्यास जबाबदारी आमच्यावर राहणार नाही.</li>
+               <li> अचानक (मशीन बंद होणे, वीज खंडित होणे) या कारणामुळे कपडे देण्यास उशीर होऊ शकतो.</li>
+               <li> पावती शिवाय कपडे देता येणार नाही, पावती हरवल्यास कपड्याची जबाबदारी नाही.</li>
+           </ul>
+        </div>
+    </div>
+
+    <button class="btn btn-success noPrint printBtn" id="invoice-print" onclick="window.print()"><i class="fa fa-print"></i> Print Invoice</button>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jquery.invoice.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery().invoice({
+                addRow : "#addRow",
+                delete : ".delete",
+                parentClass : ".item-row",
+
+                price : ".price",
+                qty : ".qty",
+                total : ".total",
+                totalQty: "#totalQty",
+
+                subtotal : "#subtotal",
+                discount: "#discount",
+                shipping : "#shipping",
+                grandTotal : "#grandTotal"
+            });
+        });
+
+        var d = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var dmy= "दि.- " +  d.getDate()+" / "+ months[d.getMonth()] +" / "+ d.getFullYear();
+        document.getElementById("demo").innerHTML = dmy;
+
+    </script>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</html>
